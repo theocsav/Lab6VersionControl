@@ -23,7 +23,7 @@ def main():
             encoded_password = encode(user_password)
             print("Your password has been encoded and stored!")
             print()
-        
+
         if user_input == '2':
             # print(f"The encoded password is {encoded_password}, and the original password is {}")
             # print()
