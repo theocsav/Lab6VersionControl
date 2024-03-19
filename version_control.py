@@ -9,7 +9,13 @@ def main():
     pass
 
 def encode(password):
-    pass
+    encoded_password = ''
+    for i in password:
+        digit = int(i) + 3
+        if digit > 10:
+            digit = str(digit)[1:]
+        encoded_password += str(digit)
+    return encoded_password
 
 if __name__ == "__main__":
     main()
