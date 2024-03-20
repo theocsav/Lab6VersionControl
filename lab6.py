@@ -19,7 +19,7 @@ def main():
 def encode(password):
     encoded_password = ""
     for num in password:
-        encoded_password += str(int(num) + 3)
+        encoded_password += str(int(num) + 3)[-1]
     return encoded_password
 
 
@@ -33,7 +33,7 @@ def option_selector(option, encoded_password):
             encoded_password = encode(password)
             print("Your password has been encoded and stored!\n")
         case '2':
-            print(f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.\n")
+            #print(f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.\n")
             pass
         case default:
             print("Error. Incorrect selection.\n")
@@ -42,7 +42,6 @@ def option_selector(option, encoded_password):
 
 def decode(encoded_password):
     pass
-
 
 def print_menu():
     print("Menu")
