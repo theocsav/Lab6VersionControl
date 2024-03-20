@@ -33,15 +33,22 @@ def option_selector(option, encoded_password):
             encoded_password = encode(password)
             print("Your password has been encoded and stored!\n")
         case '2':
-            #print(f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.\n")
+            print(f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.\n")
             pass
         case default:
             print("Error. Incorrect selection.\n")
     return encoded_password
 
 
-def decode(encoded_password):
-    pass
+def decode(password):
+    decoded_password = ''
+    for i in password:
+        digit = int(i)
+        if digit < 3:
+            digit += 10
+        digit -= 3
+        decoded_password += str(digit)
+    return decoded_password
 
 def print_menu():
     print("Menu")
