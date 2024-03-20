@@ -6,7 +6,6 @@ Description: Lab 6: Version Control
 
 
 def main():
-    password = ""
     encoded_password = ""
     while True:
         print_menu()
@@ -14,7 +13,7 @@ def main():
         if option == '3':
             break
         else:
-            password, encoded_password = option_selector(option, password, encoded_password)
+            encoded_password = option_selector(option, encoded_password)
 
 
 def encode(password):
@@ -24,7 +23,7 @@ def encode(password):
     return encoded_password
 
 
-def option_selector(option, password, encoded_password):
+def option_selector(option, encoded_password):
     match option:
         case '1':
             while True:
@@ -34,10 +33,15 @@ def option_selector(option, password, encoded_password):
             encoded_password = encode(password)
             print("Your password has been encoded and stored!\n")
         case '2':
-            print(f"The encoded password is {encoded_password}, and the original password is {password}.\n")
+            print(f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.\n")
+            pass
         case default:
             print("Error. Incorrect selection.\n")
-    return password, encoded_password
+    return encoded_password
+
+
+def decode(encoded_password):
+    pass
 
 
 def print_menu():
